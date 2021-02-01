@@ -1,0 +1,55 @@
+﻿<Window x:Class="Game_Of_Life.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game_Of_Life"
+        mc:Ignorable="d"
+        Title="Game Of Life"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        KeyDown="ToucheEvent"
+        SizeToContent="WidthAndHeight">
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Simulation">
+                    <MenuItem Name ="StartMenuItem" Header="Lancer la simulation" InputGestureText="F5"
+                              Click="LancerSimul"/>
+                    <MenuItem Name ="StopMenuItem" Header="Arrêter la simulation" InputGestureText="Echap"
+                              Click="StopSimul"
+                              IsEnabled="False"/>
+                    <MenuItem Name ="PauseMenuItem" Header="Mettre en pause la simulation" InputGestureText="Espace"
+                              Click="PauseSimul"
+                              IsEnabled="False"/>
+                </MenuItem>
+                <MenuItem Header="Motifs">
+                    <MenuItem Header="Planeurs" Name="MenuPlaneur"/>
+                    <MenuItem Header="Générateurs" Name="MenuGener"/>
+                    <MenuItem Header="Stationnaires" Name="MenuStatio"/>
+                    <MenuItem Header="Oscillateurs" Name="MenuOsci"/>
+                    <MenuItem Header="Autres" Name="MenuAutre"/>
+                    <Separator/>
+                    <MenuItem Header="Nouveau motif" Click="DisplayNewPattern">
+
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Options"
+                          Click="DisplayOptions"/>
+            </Menu>
+        </DockPanel>
+        <Canvas Grid.Row="1"
+                Name="MainCanvas"
+                Width="1000"
+                MaxWidth="1400"
+                Height="800"
+                MaxHeight="900"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="WhiteSmoke"/>
+    </Grid>
+</Window>

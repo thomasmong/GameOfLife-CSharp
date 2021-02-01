@@ -1,0 +1,41 @@
+﻿<Window x:Class="Game_Of_Life.WindowOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game_Of_Life"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Options"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterOwner"
+        Topmost="False" ShowInTaskbar="False">
+    <Grid>
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="10">
+            <DockPanel Margin="2">
+                <xctk:IntegerUpDown Name="StepperRow" Width="80" DockPanel.Dock="Right" Maximum="500" Minimum="2"/>
+                <Label Content="Nombre de lignes" DockPanel.Dock="Left"/>
+            </DockPanel>
+            <DockPanel Margin="2">
+                <xctk:IntegerUpDown Name="StepperColumn" Width="80" DockPanel.Dock="Right" Maximum="500" Minimum="2"/>
+                <Label Content="Nombre de colonnes" DockPanel.Dock="Left"/>
+            </DockPanel>
+            <DockPanel Margin="2">
+                <xctk:IntegerUpDown Name="StepperFreq" Width="80" DockPanel.Dock="Right" Maximum="30" Minimum="1"/>
+                <Label Content="Fréquence de rafraichissement" DockPanel.Dock="Left"/>
+            </DockPanel>
+            <DockPanel Margin="2" HorizontalAlignment="Center">
+                <CheckBox Name="CheckTheme" DockPanel.Dock="Right" VerticalAlignment="Center"/>
+                <Label Content="Thème sombre" DockPanel.Dock="Left"/>
+            </DockPanel>
+            <Separator/>
+            <Button Content="Appliquer" HorizontalAlignment="Center"
+                    Padding="2"
+                    Margin="0,8,0,0"
+                    Click="Appliquer"/>
+        </StackPanel>
+    </Grid>
+</Window>
